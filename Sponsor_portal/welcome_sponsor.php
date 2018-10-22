@@ -1,6 +1,13 @@
 <?php
 	session_start();
+	include('../config.php');
 	$user=$_SESSION["login_user"];
+	$sql="select wallet_sponsor from sponsor where id_sponsor='$user';";
+	$result=mysqli_query($link,$sql);
+	$row=mysqli_fetch_assoc($result);
+	$amount=$row['wallet_sponsor'];
+	$_SESSION['amount']=$amount;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,6 +34,7 @@
 				<li class="items"><a href="cycle_reg.php" target="_self" >Cycle Registeration</a></li>
 				<li class="items"><a href="del_cycle.php" target="_self" >Delete Cycle</a></li>
 				<li class="items"><a href="cycle_status.php" target="_self">View/Modify Cycle Status</a></li>
+				<li class="items"><a href="Withdraw.php" target="_self">Withdraw</a></li>
 				<li class="items"><a href="change_pass.php" target="_self">Change password</a></li>
 				<li class="items"><a href="del_user.php" target="_self">Delete user</a></li>
 			</ul>
@@ -34,6 +42,7 @@
 		<div id="wrapper">
 			<div id="text">
 				<p>Welcome user:<?php echo " ".$_SESSION["login_user"];?></p>
+				<p>Current Wallet Amount: <?php echo $amount;?></p>
 				<p>Use the side bar to explore your options</p>
 			</div>
 		</div>

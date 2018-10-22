@@ -1,19 +1,26 @@
 <?php
-	session_start();
+  session_start();
 	include('../config.php');
-	$sql="select t_diff from trans_cycle order by id_trans desc limit 1;";
-	$result=mysqli_query($link,$sql);
-	$row=mysqli_fetch_assoc($result);
-	$amount=$row['t_diff'];
+	$user=$_SESSION["login_user"];
+  $amount=$_SESSION['amount'];
+  $sql="update trans_cycle set t_status='W' where id_rec='$user' and t_status='N';";
+  $result=mysqli_query($link,$sql);
+  $sql="update sponsor set wallet_sponsor=0 where id_sponsor='$user';";
+  $result=mysqli_query($link,$sql);
   if($_SERVER["REQUEST_METHOD"]=="POST")
 	{
-		header('location: welcome_renter.php');
+    echo "
+      <script  type='text/javascript'>
+        alert('Money Withdrawn!');
+        window.location.href = 'welcome_sponsor.php';
+      </script>";
   }
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Payment</title>
+	<title>Withdraw</title>
 	<link rel="stylesheet" type="text/css" href="../css/reg.css"/>
 	<link rel="icon" href="/DBMS/favicon.jpg">
 	<style type="text/css"></style>
@@ -25,10 +32,13 @@
 			<div id="name_logo">
 				<p>Cycle-Lister VIT&trade;</p>
 			</div>
+      <div id="ret">
+        <a href="welcome_sponsor.php" target="_self" class="button">Back</a>
+      </div>
 		</div>
 		<div id="wrapper">
 			<header>
-				<h1>Pay the fee</h1>
+				<h1>Withdraw the amount?</h1>
 			</header>
 			<div>
 				<p class="error">Amount: <?php echo $amount; ?></p>
@@ -36,7 +46,7 @@
 			<div class="form">
 				<form id="form_id" method="POST">
             <br/><br/><br/><br/><br/><br/>
-            <button id="REG_button">Pay</button>
+            <button id="REG_button">Withdraw</button>
         </form>
       </div>
     </div>

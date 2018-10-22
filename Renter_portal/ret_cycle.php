@@ -49,9 +49,8 @@
 				window.location.href = 'payment.php';
 			</script>";
 		unset($_SESSION['curr_cycle']);
-
-
-  }
+	}
+	mysqli_close($link);
 ?>
 <!DOCTYPE html>
 <html>
