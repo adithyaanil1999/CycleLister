@@ -3,7 +3,12 @@
 	include('../config.php');
   if($_SERVER["REQUEST_METHOD"]=="POST")
 	{
-    
+		$sql="select t_diff from trans_cycle order by id_trans desc limit 1;";
+		$result=mysqli_query($link,$sql);
+		if($result)
+		{
+			
+		}
   }
 ?>
 <!DOCTYPE html>
@@ -27,7 +32,7 @@
 				<h1>Pay the fee</h1>
 			</header>
 			<div class="form">
-				<form id="form_id" method="POST" action="#">
+				<form id="form_id" method="POST">
             <br/><br/><br/><br/><br/><br/>
             <button id="REG_button">Pay</button>
         </form>

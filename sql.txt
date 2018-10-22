@@ -47,4 +47,5 @@ CREATE table wallet( id_wallet varchar(30) NOT null PRIMARY KEY,
     money int(20) DEFAULT 0, withdraw_status varchar(2), 
     FOREIGN KEY (id_wallet) REFERENCES sponsor(id_sponsor));
 
-
+ALTER TABLE `sponsor` ADD `wallet_sponsor` INT NOT NULL AFTER `phone`;
+ALTER TABLE `trans_cycle` ADD `t_status` INT NOT NULL AFTER `id_rec`;

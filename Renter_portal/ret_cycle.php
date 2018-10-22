@@ -38,16 +38,15 @@
 		values((select TIMESTAMPDIFF(SECOND,start_Time,end_Time) from cycle_rec where renter_reg='$user'order by id DESC LIMIT 1),
 		(select TIMESTAMPDIFF(SECOND,start_Time,end_Time) from cycle_rec where renter_reg='$user' order by id DESC LIMIT 1 )*5,
 		(select sponsor_reg from cycle_rec where renter_reg='$user' order by id DESC LIMIT 1)); ";
-		//echo $sql;
+
 		$result=mysqli_query($link,$sql);
 
-		$sql="insert into wallet(id_wallet,money,withdraw_status) values('$user',(select TIMESTAMPDIFF(SECOND,start_Time,end_Time) from cycle_rec where renter_reg='$user' order by id DESC LIMIT 1 )*5,'N');";
+		$sql="update sponsor set wallet_sponsor=(SELECT sum(t_diff) from trans_cycle where id_rec='$user' AND t_status='N') where id_sponsor='$user';";
 		$result=mysqli_query($link,$sql);
-
 		echo "
 			<script  type='text/javascript'>
 				alert('Return sucessful!');
-				window.location.href = 'welcome_renter.php';
+				window.location.href = 'payment.php';
 			</script>";
 		unset($_SESSION['curr_cycle']);
 
