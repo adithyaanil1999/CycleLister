@@ -1,0 +1,103 @@
+body{
+	background-color: #3b3c3f;
+}
+a{
+    text-decoration: none;
+    color:#34443d;
+}
+#container{
+	background-color: #897c8b;
+	width:auto;
+	font-family:'Open Sans', sans-serif;
+	font-size:17px;
+	height:750px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#nav{
+	background-color:#4e4e4f;
+	font-family:'Montserrat', sans-serif;
+	padding:50px;
+	margin-bottom:10px;
+	position: relative;
+	width: auto;
+}
+#name_logo{
+	text-align:left;
+	background-color:#4e4e4f;
+	font-family:'Dancing Script', cursive;
+	color:lime;
+	width:200px;
+	height:48px;
+	float:left;
+}
+#ret{
+	border:2px solid #4CAF50;
+	border-radius: 10px;
+	background-color:#45f442;
+	text-align:center;
+	float:right;
+	position: relative;
+	top:0;
+	padding: 10px;
+	font-size: 1vw;
+	max-width: 150px;
+
+}
+#ret:hover{
+	border:2px solid #4CAF50;
+	border-radius: 10px;
+	background-color:white;
+	text-align:center;
+	float:right;
+	position: relative;
+	top:0;
+	font-size: 1vw;
+	max-width: 150px;
+}
+header{
+	margin: 0px 0px 0px 30px;
+	font-size: 0.7vw;
+	width: auto;
+}
+#wrapper{
+	color: lime;
+	font-family:'Montserrat', sans-serif;
+	margin: 80px 0px 0px 170px;
+	background-color: #4e4e4f;
+	opacity: 0.8;
+	max-width: 550px;
+}
+
+table{
+	border:1px solid lime;
+	width:100%;
+	text-align: center;
+}
+th,td{
+	border:1px solid lime;
+	text-align: center;
+}
+#REG_button{
+	padding: 10px;
+	border: 0;
+	border:2px solid #4CAF50;
+	background-color:#45f442;
+	border-radius: 10px;
+	text-align:center;
+	font-family:'Montserrat', sans-serif;
+
+}
+#REG_button:focus{
+	outline: 0;
+}
+#REG_button:hover{
+	padding: 10px;
+	border: 0;
+	border:2px solid #4CAF50;
+	background-color:white;
+	border-radius: 10px;
+	text-align:center;
+	font-family:'Montserrat', sans-serif;
+
+}

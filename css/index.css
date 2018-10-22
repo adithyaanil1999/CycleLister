@@ -1,0 +1,108 @@
+body{
+	background-color: #3b3c3f;
+}
+
+#container{
+	background-color: #4e4e4f;
+	background-image: url('cycle.jpg');
+	width: auto;
+	font-family: Optima;
+	height:900px;
+	position: relative;
+
+}
+#header{	
+	
+	background-color: #4e4e4f;
+	font-family: 'Dancing Script', cursive;
+	z-index: 1; 
+	font-size: 2vw;
+	height:10%;
+	position: sticky;
+	top: 0;
+	color: lime;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+a{
+    text-decoration: none !important;
+    color: #34443d; 
+}
+#choices{
+	background-color: #4e4e4f;
+	font-family: 'Open Sans', sans-serif;
+	opacity: 0.9;
+	z-index: -1;
+	text-align: center;
+	color: lime;
+	width:250px;
+	float: right;
+	margin:30px; 
+	padding-top: 100px;
+	height: 300px;
+}
+
+#Renter_button{
+	text-align: center;
+	border: 2px solid #4CAF50;
+	border-radius: 10px;
+	background-color: #45f442;
+	margin: 10px;
+	padding: 10px;
+}
+#Renter_button:hover{
+	text-align: center;
+	border: 2px solid #4CAF50;
+	border-radius: 10px;
+	background-color: white;
+	margin: 10px;
+	padding: 10px;
+}
+
+#Sponsor_button{
+	border: 2px solid #4CAF50;
+	border-radius: 10px;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	background-color: #45f442;
+}
+#Sponsor_button:hover{
+	border: 2px solid #4CAF50;
+	border-radius: 10px;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	background-color: white;
+}
+#desc{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #4e4e4f;
+	font-size: 2vw;
+	opacity: 0.8;
+	color:lime;				
+	min-height: 100px;
+	min-width: 100%;
+	position: absolute;
+	bottom: 0;
+	
+}
+#foot
+{
+	height:30px;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom:10px; 
+}
+#footer{
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	position: fixed;
+	bottom: 0;
+	width: 100%;	
+	border: 1px solid #ab47bc;
+	background-color: #adadad;
+
+}
