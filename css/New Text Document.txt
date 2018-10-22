@@ -1,1 +1,0 @@
-<p>Cycle-Lister is a Web based Application that lets you quickly and efficently seek out bicycles inside VIT-university without any hassle.</br></br>For your convenience select wheater you are a sponsor(i.e. those who give out cycles) or a renter(i.e. those who seek cycles).</p>
