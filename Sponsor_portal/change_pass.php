@@ -11,7 +11,7 @@
 
 		if($count==1)
 		{
-			$sql="Update s_login set password='$new_pass' where password='new_pass'";
+			$sql="Update s_login set password='$new_pass' where password='$old_pass'";
       $result=mysqli_query($link,$sql);
 			header("location:welcome_sponsor.php");
     }
