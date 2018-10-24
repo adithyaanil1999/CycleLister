@@ -22,14 +22,20 @@
     else
     {
       $sql="update cycle_list set available='A',location='$loc' where Chasis_no='$_SESSION[curr_cycle]';";
+	//		echo $sql;
   		$result=mysqli_query($link,$sql);
       if($result)
       {
+
         $sql="update cycle_rec set end_Time=now(),ret_status='T' where renter_reg='$user';";
+	//		echo $sql;
+
   		  $result=mysqli_query($link,$sql);
       }
     }
 		$sql="select reg_no from cycle_list where Chasis_no='$_SESSION[curr_cycle]';";
+		//	echo $sql;
+
 		$result=mysqli_query($link,$sql);
     $row=mysqli_fetch_assoc($result);
     $reg=mysqli_real_escape_string($link,$row['reg_no']);
@@ -41,7 +47,8 @@
 
 		$result=mysqli_query($link,$sql);
 
-		$sql="update sponsor set wallet_sponsor=(SELECT sum(t_diff) from trans_cycle where id_rec='$user' AND t_status='N') where id_sponsor='$user';";
+		$sql="update sponsor set wallet_sponsor=(SELECT sum(total) from trans_cycle where id_rec='$reg' AND t_status='N') where id_sponsor='$reg';";
+		echo $sql;
 		$result=mysqli_query($link,$sql);
 		echo "
 			<script  type='text/javascript'>
